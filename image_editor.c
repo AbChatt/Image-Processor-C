@@ -15,19 +15,24 @@ int main(int argc, char *argv[]) {
          * print the error message and terminate the program. Otherwise, invoke the corresponding
          * image processing function. */
 	
+	//printf("%d\n", argc);
+	//printf("%c\n", *argv[1]);
+
+	// argv comparison isn't working
+
 	if (argc != 2) {
 		printf("Error: Expecting one command-line argument, which needs to be either 1, 2, or 3.");
 		return 0;
 	}
 	else {
-		if (argv[1] == 1) {
+		if (atoi(argv[1]) == 1) {
 			remove_red();
 		}
-		else if (argv[1] == 2) {
+		else if (atoi(argv[1]) == 2) {
 			convert_to_black_and_white();
 		}
 
-		else if (argv[1] == 3) {
+		else if (atoi(argv[1]) == 3) {
 			instagram_square();
 		}
 		else {
