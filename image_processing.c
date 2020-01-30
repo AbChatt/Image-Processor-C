@@ -194,6 +194,14 @@ void instagram_square()
 
    scanf("%d %d", &col_num, &row_num);
    //getchar();
+
+   if (col_num > row_num) {
+      col_num = row_num;
+   }
+   else if (col_num < row_num) {
+      row_num = col_num;
+   }
+   
    printf("%d %d\n", col_num, row_num);
 
    // now, get max colour value
@@ -209,7 +217,7 @@ void instagram_square()
          scanf("%d %d %d", &r_pixel, &g_pixel, &b_pixel);
          //getchar();
          
-         r_pixel = 0;
+         //r_pixel = 0;
          printf("%d %d %d  ", r_pixel, g_pixel, b_pixel);
       }
 
