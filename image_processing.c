@@ -6,7 +6,7 @@
  */
 void remove_red()
 {
-   //char header[3] = "P3\0";
+   char header;
    int r_pixel;
    int g_pixel;
    int b_pixel;
@@ -23,6 +23,8 @@ void remove_red()
    //printf("%s\n", header);
 
    printf("P3\n");
+   scanf("%c\n", &header);
+   getchar();
 
    // now, read the dimensions of the file
 
@@ -70,11 +72,15 @@ void convert_to_black_and_white()
 
    // need to preserve line to check output
 
-   scanf("%c", &header);
+   // scanf("%c", &header);
+   // getchar();
+   // scanf("%c", &header);
+   // getchar();
+   // printf("%c\n", header);
+
+   printf("P3\n");
+   scanf("%c\n", &header);
    getchar();
-   scanf("%c", &header);
-   getchar();
-   printf("%c\n", header);
 
    // now, read the dimensions of the file
 
