@@ -6,7 +6,7 @@
  */
 void remove_red()
 {
-   char header;
+   //char header[3] = "P3\0";
    int r_pixel;
    int g_pixel;
    int b_pixel;
@@ -18,22 +18,22 @@ void remove_red()
 
    // need to preserve line to check output
 
-   scanf("%c", &header);
-   getchar();
-   scanf("%c", &header);
-   getchar();
-   printf("%c\n", header);
+   //scanf("%s %s", &header, &header[1]);
+   //header[2] = '\0';
+   //printf("%s\n", header);
+
+   printf("P3\n");
 
    // now, read the dimensions of the file
 
    scanf("%d %d", &col_num, &row_num);
-   getchar();
+   //getchar();
    printf("%d %d\n", col_num, row_num);
 
    // now, get max colour value
 
    scanf("%d", &max_col_val);
-   getchar();
+   //getchar();
    printf("%d\n", max_col_val);
 
    // now, set the parameters for our loop using these values
@@ -41,10 +41,10 @@ void remove_red()
    for (int i = 0; i < row_num; i++) {
       for (int j = 0; j < col_num; j++) {
          scanf("%d %d %d", &r_pixel, &g_pixel, &b_pixel);
-         getchar();
+         //getchar();
          
          r_pixel = 0;
-         printf("%d %d %d", r_pixel, g_pixel, b_pixel);
+         printf("%d %d %d  ", r_pixel, g_pixel, b_pixel);
       }
 
       printf("\n");
@@ -99,7 +99,7 @@ void convert_to_black_and_white()
          r_pixel = avg;
          g_pixel = avg;
          b_pixel = avg;
-         printf("%d %d %d", r_pixel, g_pixel, b_pixel);
+         printf("%d %d %d  ", r_pixel, g_pixel, b_pixel);
       }
 
       printf("\n");
