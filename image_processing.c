@@ -156,10 +156,8 @@ void instagram_square()
 
    // process dimensions as needed
 
-   // now, set the parameters for our loop using these values
-
    if (col_num > row_num) {
-      col_num = row_num;
+      //col_num = row_num;
 
       printf("%d %d\n", row_num, row_num);
 
@@ -168,38 +166,43 @@ void instagram_square()
       scanf("%d", &max_col_val);
       printf("%d\n", max_col_val);
 
+      // now, set the parameters for our loop using these values
+
       if (col_num > 10) {
-         for (int i = 0; i < row_num; i++) {
-            for (int j = 0; j < col_num; j++) {
-               scanf("%d %d %d", &r_pixel, &g_pixel, &b_pixel);
+         while (scanf("%d %d %d", &r_pixel, &g_pixel, &b_pixel) != EOF) {
+            if (level <= row_num) {
                printf("%d %d %d  ", r_pixel, g_pixel, b_pixel);
                count++;
-
-               if (count > 9) {
-               printf("\n");
-               count = 0;
-               }
             }
 
-            // get to newline, ignoring all other characters
-            while ((getchar()) != '\n');
-            printf("\n");  
+            if (count > 9) {
+               printf("\n");
+               count = 0;
+            }
+
+            if (level == col_num) {
+               level = 0;
+               printf("\n");
+            }
+
+            level++;
          }
       }
       else
       {
-         for (int i = 0; i < row_num; i++) {
-            for (int j = 0; j < col_num; j++) {
-               scanf("%d %d %d", &r_pixel, &g_pixel, &b_pixel);
+         while (scanf("%d %d %d", &r_pixel, &g_pixel, &b_pixel) != EOF) {
+            if (level <= row_num) {
                printf("%d %d %d  ", r_pixel, g_pixel, b_pixel);
             }
 
-            // get to newline, ignoring all other characters
+            if (level == col_num) {
+               level = 0;
+               printf("\n");
+            }
 
-            while ((getchar()) != '\n');
-            printf("\n");
-         }
-      }
+            level++;
+         }  
+      }            
    }
    else if (col_num <= row_num) {
       row_num = col_num;
